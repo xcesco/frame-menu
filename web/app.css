@@ -1,0 +1,76 @@
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+
+.app-icon {
+    color: #6ec5ff;
+}
+
+a.nav-link.app-menu {
+    color: #6ec5ff;
+}
+
+a.nav-link.app-menu.active {
+    color: white;
+    border-bottom: white solid medium;
+}
+
+.app-header-text {
+    color: #fdd835;
+}
+
+.navbar {
+    margin: 12px;
+    background-color: #0068bf;//#2196f3;
+}
+
+@media (max-width: 320px) {
+    .app-header-text {
+        text-overflow: ellipsis;
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 543px) {
+    .app-header-text {
+        text-overflow: ellipsis;
+        font-size: 10px;
+    }
+}
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+    .app-header-text {
+        font-size: 12px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .app-header-text {
+        font-size: 14px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .app-header-text {
+        font-size: 16px;
+    }
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .app-header-text {
+        font-size: 18px;
+    }
+}
+

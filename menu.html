@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Frame Menu</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>iframe {
+        width: 100%;
+        min-height: 800px
+    }</style>
+    <link rel="stylesheet" href="web/app.css">
+
+</head>
+<body clas="text-center">
+
+<!-- menu bar -->
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg rounded">
+    <a id="app-link" class="navbar-brand d-none d-sm-block" href="#" data-toggle="tooltip" title="Click here">
+        <i class="fa fa-home app-icon"></i>&nbsp;
+    </a>
+    <span id="app-descrizione" class="mx-3 app-header-text"></span>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#app-navbar"
+            aria-controls="app-navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse collapse justify-content-md-center" id="app-navbar">
+        <ul id="app-menu" class="navbar-nav mr-auto">
+
+        </ul>
+        <img class="d-none d-sm-block mx-4" style="height: 40px" id="app-image">
+        <div class="form-inline my-2 my-md-0">
+            <a data-toggle="tooltip" title="Refresh" href="" class="navbar-brand " id="app-refresh"><i class="fa fa-refresh app-icon"></i></a>
+        </div>
+    </div>
+</nav>
+
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+
+    <iframe name="app-frame" id="app-frame" frameborder="1" scrolling="yes"
+            onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' style="height:200px;width:100%;border:none;overflow:hidden;">
+    </iframe>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP"
+        crossorigin="anonymous"></script>
+<!--http://jquery-textfill.github.io/-->
+<!--<script src="./web/jquery.textfill.min.js"></script>-->
+
+<script src="web/jquery-google-sheet-to-json.js"></script>
+<script src="web/config.js"></script>
+<script src="web/app.js"></script>
+
+</body>
+</html>
