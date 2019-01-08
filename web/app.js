@@ -2,7 +2,6 @@ let menuInfo = null;
 let menuItems = [];
 let menuSheetList = [];
 let menuSheet = null;
-const NOME_FOGLIO_PARAM = 'NomeFoglio';
 
 /**
  * Gestisce i parametri queryParams.
@@ -87,19 +86,25 @@ $(document).ready(function () {
 
 
     $.googleWorkSheetListToJSON(SPREADSHEET_ID).done(function (worksheetList) {
-        console.log(worksheetList);
+
 
         let menuChoosed = $.urlParam(NOME_FOGLIO_PARAM);
-        console.log(menuChoosed);
+        console.log('Foglio selezionato (con query param "'+NOME_FOGLIO_PARAM+'")=',menuChoosed);
 
+        // impostiamo l'elenco <nome foglio, id>
         menuSheetList = worksheetList;
+        console.log('Elenco foglio presenti nel gsheet: ',worksheetList);
 
         if (menuChoosed !== null) {
-            console.log('menu', menuChoosed);
             menuSheet = $.convertWorksheetNameToId(menuChoosed, worksheetList);
+            if (menuSheet===undefined) {
+                console.error('Il query param "'+NOME_FOGLIO_PARAM+'" contiene un foglio inesistente. Viene utilizzato il primo foglio');
+            }
         } else {
             menuSheet = undefined;
         }
+
+
 
         $.googleSheetToJSON(SPREADSHEET_ID, menuSheet)
             .done(function (rows) {
@@ -122,10 +127,6 @@ $(document).ready(function () {
 
                         menuItems.push(item);
                     }
-
-                    // console.log(menuSheet);
-                    // console.log(menuInfo);
-                    // console.log(menuItems);
 
                     $.buildMenu(menuInfo, menuItems);
                 }

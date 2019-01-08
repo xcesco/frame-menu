@@ -1,3 +1,10 @@
+/**
+ * Libreria presa originariamente da:
+ *    https://github.com/confluentforms/jquery-google-sheet-to-json
+ *
+ * Modificata da Francesco Benincasa per aggiungere il metodo necessario a convertire i nomi dei fogli nei relativi id. Si ricorda che questi ultimi
+ * servono nel caso in cui si voglia accedere ad un particolare foglio del gsheet.
+ */
 // xx -- review best practices for jquery plugins
 (function ($, window, document, undefined) {
     'use strict';
@@ -76,11 +83,12 @@
     };
 
     /**
-     * Retrieve the list of worksheets
+     * Dato un gsheet, recupera l'elenco degli id dei vari fogli.
+     *
      * @param id
      * @returns {never}
      */
-    $.googleWorkSheetListToJSON = function googleSheetToJSON(id) {
+    $.googleWorkSheetListToJSON = function googleWorkSheetListToJSON(id) {
 
         var deferred = new $.Deferred();
         var url = [
