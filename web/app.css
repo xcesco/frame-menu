@@ -9,12 +9,34 @@ M E D I A  Q U E R I E S
 Bootstrap 4 breakpoints
 */
 
+/**
+    colore icone
+ */
 .app-icon {
-    color: #6ec5ff;
+    //color: #6ec5ff;
+    color: white;
 }
 
-a.nav-link.app-menu {
-    color: #6ec5ff;
+/**
+    colore menu
+ */
+.nav-item > a.nav-link.app-menu {
+    color: white;
+}
+
+/**
+    colore menu on hover
+ */
+.nav-item:hover > a.nav-link.app-menu {
+    color: white;
+    background-color: #6ec5ff;
+}
+
+/**
+    colore menu active
+ */
+.nav-item > a.nav-link.app-menu.active {
+    color: white;
 }
 
 a.nav-link.app-menu.active {
