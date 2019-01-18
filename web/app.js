@@ -57,7 +57,12 @@ $.buildMenu = function buildMenu(menuInfo, menuItems) {
     // controllo esistenza componenti menu
     if (menuItems.length>0) {
         menuItems.forEach(item => {
-            uiMenu.append('<li class="nav-item"><a class="nav-link app-menu" target="app-frame" href="'+item.url+'">'+item.chiave+'</a></li>');
+            if (item.hasOwnProperty("esterna")) {
+                uiMenu.append('<li class="nav-item"><a class="nav-link app-menu-esterno" style="color: white" target="_blank" href="'+item.url+'">'+item.chiave+'&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></a></li>');
+            } else {
+                uiMenu.append('<li class="nav-item"><a class="nav-link app-menu" target="app-frame" href="'+item.url+'">'+item.chiave+'</a></li>');
+            }
+
         });
 
         $('.app-menu').on('click', function() {
